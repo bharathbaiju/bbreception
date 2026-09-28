@@ -1,6 +1,7 @@
 import { CalendarPlus, MapPin, Clock } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { ScratchReveal } from "./ScratchReveal";
+import { Tilt } from "./Tilt";
 import { EVENTS, googleCalendarUrl, mapsUrl, type WeddingEvent } from "@/lib/wedding-data";
 import { getReceptionIcs } from "@/lib/guest-submissions.functions";
 import receptionImg from "@/assets/reception.jpg";
@@ -19,6 +20,7 @@ const icsUrls: Record<string, string> = {
 function EventCard({ event, index }: { event: WeddingEvent; index: number }) {
   return (
     <Reveal delay={index * 140} className="h-full">
+      <Tilt className="h-full" max={8}>
       <ScratchReveal label={event.name} className="h-full rounded-[inherit]">
         <article className="surface-card group flex h-full flex-col overflow-hidden">
           <div className="relative aspect-[4/3] overflow-hidden">
@@ -88,6 +90,7 @@ function EventCard({ event, index }: { event: WeddingEvent; index: number }) {
           </div>
         </article>
       </ScratchReveal>
+      </Tilt>
     </Reveal>
   );
 }
