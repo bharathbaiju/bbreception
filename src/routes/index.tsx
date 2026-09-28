@@ -5,6 +5,7 @@ import heroImg from "@/assets/hero.jpg";
 import { Gate } from "@/components/wedding/Gate";
 import { Petals } from "@/components/wedding/Petals";
 import { Monogram } from "@/components/wedding/Monogram";
+import { Rings3D } from "@/components/wedding/Rings3D";
 import { Countdown } from "@/components/wedding/Countdown";
 import { Reveal } from "@/components/wedding/Reveal";
 import { EventsSection } from "@/components/wedding/EventsSection";
@@ -128,6 +129,9 @@ function Home() {
         />
 
         <div className="relative z-10 text-center">
+          {opened && (
+            <Rings3D className="mx-auto mb-2 h-40 w-40 sm:h-56 sm:w-56" />
+          )}
           <Reveal>
             <p className="eyebrow">Together with our families</p>
           </Reveal>
